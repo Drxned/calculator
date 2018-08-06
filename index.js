@@ -1,23 +1,22 @@
-const _buttons = document.querySelectorAll("button"),
-    _buttonsCount = _buttons.length,
-    _result = document.querySelector("#result"),
-    iter = 0;
+let buttons = document.querySelectorAll("button");
+let buttonsCount = buttons.length;
+let result = document.querySelector("#result");
+let i = 0;
 
-for (iter = 0; iter < _buttonsCount; iter++) {
-    _buttons[iter].onclick = doit;
+for (i = 0; i < buttonsCount; i++) {
+    buttons.onclick = doit;
 }
 
 function doit() {
-    var _currentValue = this.innerHTML;
-
-    if (_currentValue == "=") {
+    let currentValue = this.innerHTML;
+    if (currentValue == "=") {
         try {
-            _result.value = eval(_result.value);
-        } catch (e) {
-            _result.value = 0;
+            result.value = eval(result.value);
+        }
+        catch (e) {
+            result.value = 0;
         }
         return;
     }
-
-    _result.value += _currentValue;
+    result.value += currentValue;
 }
