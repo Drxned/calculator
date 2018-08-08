@@ -4,7 +4,7 @@ let result = document.querySelector("#result");
 let i = 0;
 
 for (i = 0; i < buttonsCount; i++) {
-    buttons.onclick = doit;
+    buttons[i].onclick = doit;
 }
 
 function doit() {
